@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Insight]">
+  <test verbose="0" name="MailRu(failed)">
+    <classes>
+      <class name="MailRuSendMessage">
+        <methods>
+          <include name="send"/>
+        </methods>
+      </class> <!-- MailRuSendMessage -->
+    </classes>
+  </test> <!-- MailRu(failed) -->
+</suite> <!-- Failed suite [Insight] -->
