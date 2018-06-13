@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Insight">
-              <span class="suite-name border-failed">Insight</span>
+              <span class="suite-name border-passed">Insight</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Insight" class="hide-methods failed suite-Insight"> (hide)</a> <!-- hide-methods failed suite-Insight -->
-                      <a href="#" panel-name="suite-Insight" class="show-methods failed suite-Insight"> (show)</a> <!-- show-methods failed suite-Insight -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Insight" class="hide-methods passed suite-Insight"> (hide)</a> <!-- hide-methods passed suite-Insight -->
+                      <a href="#" panel-name="suite-Insight" class="show-methods passed suite-Insight"> (show)</a> <!-- show-methods passed suite-Insight -->
                     </span>
-                    <div class="method-list-content failed suite-Insight">
+                    <div class="method-list-content passed suite-Insight">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Insight" title="MailRuSendMessage" hash-for-method="send">send</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Insight" title="TutByTest" hash-for-method="send">send</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Insight -->
+                    </div> <!-- method-list-content passed suite-Insight -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,10 +117,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Insight" class="panel Insight">
-          <div class="suite-Insight-class-failed">
+          <div class="suite-Insight-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">MailRuSendMessage</span>
+              <img src="passed.png"/>
+              <span class="class-name">TutByTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,33 +128,10 @@
                   <a name="send">
                   </a> <!-- send -->
                   <span class="method-name">send</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: .//*[@id=&apos;toolkit-152829900749342composeEditor_ifr&apos;] (tried for 40 second(s) with 500 MILLISECONDS interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:82)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
-	at helper.BasePage.findElement(BasePage.java:26)
-	at PersonalPage.fillFields(PersonalPage.java:18)
-	at MailRuSendMessage.send(MailRuSendMessage.java:14)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: .//*[@id=&apos;toolkit-152829900749342composeEditor_ifr&apos;]
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T18:33:54.468Z&apos;
-System info: host: &apos;DESKTOP-5N5GCJG&apos;, ip: &apos;192.168.1.95&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_151&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:882)
-	at java.util.Optional.orElseThrow(Optional.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:881)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:643)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:640)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
-	... 31 more
-... Removed 28 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Insight-class-failed -->
+          </div> <!-- suite-Insight-class-passed -->
         </div> <!-- panel Insight -->
         <div panel-name="test-xml-Insight" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -167,7 +144,7 @@ Driver info: driver.version: unknown
 &lt;suite thread-count=&quot;-1&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;Insight&quot;&gt;
   &lt;test verbose=&quot;0&quot; name=&quot;MailRu&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;MailRuSendMessage&quot;/&gt;
+      &lt;class name=&quot;TutByTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- MailRu --&gt;
 &lt;/suite&gt; &lt;!-- Insight --&gt;
@@ -210,13 +187,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'send')
-data.setCell(0, 2, 'MailRuSendMessage')
-data.setCell(0, 3, 51686);
+data.setCell(0, 2, 'TutByTest')
+data.setCell(0, 3, 19816);
 window.suiteTableData['Insight']= { tableData: data, tableDiv: 'times-div-Insight'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 51 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-Insight">
               </div> <!-- times-div-Insight -->
             </div> <!-- times-div -->
@@ -242,10 +219,8 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">MailRuSendMessage</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TutByTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">send</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->

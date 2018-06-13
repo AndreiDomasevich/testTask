@@ -1,27 +1,18 @@
 import helper.BasePage;
-import helper.MyProperties;
 import org.openqa.selenium.By;
 
 public class PersonalPage extends BasePage {
 
-    private static final By writeMessageButton = By.xpath(".//*[@class='b-toolbar__item']/a/span");
-    private static final By receiverField = By.xpath(".//*[@data-original-name='To']");
-    private static final By textArea = By.xpath(".//*[@id='tinymce']");
-    private static final By sendButton = By.xpath(".//*[@class='b-toolbar__btn__text']");
+    private static final By mailButton = By.xpath(".//*[@title='Почта']");
+    private static final By singleMessage = By.xpath(".//*[@class='ns-view-container-desc mail-MessagesList js-messages-list']/div");
 
-    public void clickWriteMessageButton(){
-        findElement(writeMessageButton).click();
+    public void toMail(){
+        findElement(mailButton).click();
     }
 
-    public void fillFields(){
-        findElement(receiverField).sendKeys(MyProperties.getMyProperty("receiver"));
-        driver.switchTo().frame(0);
-        findElement(textArea).sendKeys(MyProperties.getMyProperty("message"));
-        driver.switchTo().defaultContent();
-    }
+    public void getNumberOfMessages(){
 
-    public void sendButtonClick(){
-        findElement(sendButton).click();
+        System.out.println(getWebElementsList(singleMessage).size());//в задании не было необходимости учитывать ситуацию отсутствия писем, поэтому она и не предусматривалась.
     }
 
 }

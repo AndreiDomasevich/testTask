@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="55.934" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="22.656" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,23 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="send" classname="MailRuSendMessage" time="51.708">
-    <failure message="Expected condition failed: waiting for element to be clickable: By.xpath: .//*[@id=&apos;toolkit-152829900749342composeEditor_ifr&apos;] (tried for 40 second(s) with 500 MILLISECONDS interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: .//*[@id='toolkit-152829900749342composeEditor_ifr'] (tried for 40 second(s) with 500 MILLISECONDS interval)
-	at MailRuSendMessage.send(MailRuSendMessage.java:14)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-Cannot locate an element using By.xpath: .//*[@id='toolkit-152829900749342composeEditor_ifr']
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
-System info: host: 'DESKTOP-5N5GCJG', ip: '192.168.1.95', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
-Driver info: driver.version: unknown
-	at MailRuSendMessage.send(MailRuSendMessage.java:14)
-</failure>
-    <system-err><![CDATA[июн 06, 2018 6:49:20 PM org.openqa.selenium.remote.DesiredCapabilities chrome
-INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
-Starting ChromeDriver 2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73) on port 24958
-Only local connections are allowed.
-июн 06, 2018 6:49:24 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-]]></system-err>
-  </testcase>
+  <testcase name="send" classname="TutByTest" time="19.819"/>
 </testsuite>

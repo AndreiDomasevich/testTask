@@ -1,17 +1,16 @@
 
 import org.testng.annotations.Test;
 
-public class MailRuSendMessage {
+public class TutByTest {
 
     HomePage homePageObject = new HomePage();
     PersonalPage personalPageObject = new PersonalPage();
 
     @Test
     public void send(){
-        homePageObject.goToMailRu();
+        homePageObject.goToTutBy();
         homePageObject.logIn();
-        personalPageObject.clickWriteMessageButton();
-        personalPageObject.fillFields();
-        personalPageObject.sendButtonClick();
+        personalPageObject.toMail();
+        personalPageObject.getNumberOfMessages();
     }
 }

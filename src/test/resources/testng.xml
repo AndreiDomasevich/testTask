@@ -4,7 +4,7 @@
 
     <test name="MailRu" >
         <classes>
-            <class name="MailRuSendMessage"></class>
+            <class name="TutByTest"></class>
         </classes>
 
     </test>

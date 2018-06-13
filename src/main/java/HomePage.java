@@ -5,16 +5,19 @@ import org.openqa.selenium.Keys;
 
 public class HomePage extends BasePage{
 
-    private static final By loginField = By.xpath(".//*[@id='mailbox:login']");
-    private static final By passwordField = By.xpath(".//*[@id='mailbox:password']");
+    private static final By authorizeButton = By.xpath(".//*[@id='authorize']/div/a");
+    private static final By loginField = By.xpath(".//*[@name='login']");
+    private static final By passwordField = By.xpath(".//*[@name='password']");
 
-    public void goToMailRu(){
+    public void goToTutBy(){
         navigateTo(MyProperties.getMyProperty("URL"));
     }
 
-    private void setData(){
+    public void logIn(){
+        findElement(authorizeButton).click();
         setOneField("login");
         setOneField("password");
+        pressEnter();
     }
 
     private void setOneField(String type){
@@ -28,10 +31,7 @@ public class HomePage extends BasePage{
         findElement(passwordField).sendKeys(Keys.ENTER);
     }
 
-    public void logIn(){ // не уверен, что лучшая идея так структурировать каждое отдельное действие. Просто, чтобы прояснить ситуацию, это один из возможных способов.
-        setData();
-        pressEnter();
-    }
+
 
 
 
