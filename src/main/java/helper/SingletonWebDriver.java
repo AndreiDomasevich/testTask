@@ -29,6 +29,9 @@ public class SingletonWebDriver {
     }
 
     public static WebDriver initDriver(String  browser) {
+
+        if (driver != null)
+            return driver;
         if(System.getProperty("os.name").contains("Windows"))
             osName = "windows";
         else

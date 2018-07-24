@@ -1,10 +1,11 @@
 package helper;
 
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+
 import static helper.SingletonWebDriver.initDriver;
 import static org.testng.Assert.assertTrue;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 public class TestBase {
 
     protected static final String browser = MyProperties.getMyProperty("browser");
@@ -23,6 +24,6 @@ public class TestBase {
 
     @AfterClass
     public void teardown() {
-        SingletonWebDriver.getDriver().quit();
+      //  SingletonWebDriver.getDriver().quit();
     }
 }
