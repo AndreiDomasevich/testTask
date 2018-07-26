@@ -20,6 +20,8 @@ public class HomePage extends BasePage{
     private static final By prices = By.xpath(".//div[@class='price']");
     private static final Double priceLimit = 5000.0;
     public static List<String> expectedDiagonals = new ArrayList<>();
+    private static final By oneTv = By.xpath(".//*[@class='n-snippet-list n-snippet-list_type_vertical metrika b-zone b-spy-init i-bem metrika_js_inited snippet-list_js_inited b-spy-init_js_inited b-zone_js_inited']/div[@data-id]");
+    private static final By newSorting = By.xpath(".//*[@class='n-filter-panel-dropdown__main']//*[text() = 'по новизне']");
 
     public void goToYandex(){
         navigateTo(MyProperties.getMyProperty("URL"));
@@ -84,6 +86,29 @@ public class HomePage extends BasePage{
             }
         }
         return sb.toString();
+    }
+
+    private WebElement rememberFirstElement(){
+        WebElement firstTelevisor = getWebElementsList(oneTv).get(0);
+        return firstTelevisor;
+    }
+
+    private void changeSorting(){
+        findElement(newSorting).click();
+    }
+
+    public void searchFirstTelevisor(){
+        WebElement etalon = rememberFirstElement();
+        String etalonString = etalon.getText();
+        System.out.println(etalon.getText());
+        changeSorting();
+        driver.navigate().refresh();
+        Boolean flag = false;
+        for(int i = 0; i < getWebElementsList(oneTv).size(); i ++){
+            if(getWebElementsList(oneTv).get(i).getText().equals(etalonString))
+                flag = true;
+        }
+        Assert.assertTrue(flag);
     }
 
 }

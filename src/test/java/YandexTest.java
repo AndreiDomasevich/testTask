@@ -14,5 +14,6 @@ public class YandexTest extends TestBase{
         homePageObject.setParameters();
         homePageObject.printAndCheckDescription();
         singleTvPageObject.checkCharakteristics();
+        homePageObject.searchFirstTelevisor();
     }
 }
