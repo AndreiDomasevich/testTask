@@ -7,6 +7,7 @@ public class YandexTest extends TestBase{
     private HomePage homePageObject = new HomePage();
     private SingleTvPage singleTvPageObject = new SingleTvPage();
 
+
     @Test
     public void steps() {
         homePageObject.goToYandex();
@@ -15,5 +16,6 @@ public class YandexTest extends TestBase{
         homePageObject.printAndCheckDescription();
         singleTvPageObject.checkCharakteristics();
         homePageObject.searchFirstTelevisor();
+        homePageObject.checkRatingSort();
     }
 }

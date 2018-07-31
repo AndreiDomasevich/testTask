@@ -22,6 +22,8 @@ public class HomePage extends BasePage{
     public static List<String> expectedDiagonals = new ArrayList<>();
     private static final By oneTv = By.xpath(".//*[@class='n-snippet-list n-snippet-list_type_vertical metrika b-zone b-spy-init i-bem metrika_js_inited snippet-list_js_inited b-spy-init_js_inited b-zone_js_inited']/div[@data-id]");
     private static final By newSorting = By.xpath(".//*[@class='n-filter-panel-dropdown__main']//*[text() = 'по новизне']");
+    private static final By ratingSorting = By.xpath(".//*[@class='n-filter-panel-dropdown__main']//*[text() = 'по рейтингу']");
+    private static final By ratingString = By.xpath(".//*[@class='n-snippet-card2__header-stickers']");
 
     public void goToYandex(){
         navigateTo(MyProperties.getMyProperty("URL"));
@@ -47,8 +49,6 @@ public class HomePage extends BasePage{
         elements = getWebElementsList(description);
         for (int i = 0; i < elements.size(); i++) {
             list.add(elements.get(i).getText());
-            System.out.println(list.get(i));
-            System.out.println("");
             Assert.assertTrue(list.get(i).contains("3D"));
             Boolean flag1 = false;
             for(int j = 50; j <= 55; j ++) {
@@ -73,8 +73,6 @@ public class HomePage extends BasePage{
                 flag2 = false;
         }
         Assert.assertTrue(flag2);
-
-        System.out.println(list2);
     }
 
     private String stripNonDigits(CharSequence input){
@@ -93,22 +91,41 @@ public class HomePage extends BasePage{
         return firstTelevisor;
     }
 
-    private void changeSorting(){
-        findElement(newSorting).click();
+    private void changeSorting(By sorting){
+        findElement(sorting).click();
+        driver.navigate().refresh();
     }
 
     public void searchFirstTelevisor(){
         WebElement etalon = rememberFirstElement();
-        String etalonString = etalon.getText();
-        System.out.println(etalon.getText());
-        changeSorting();
-        driver.navigate().refresh();
+        String dataID = etalon.getAttribute("data-id");
+        changeSorting(newSorting);
         Boolean flag = false;
         for(int i = 0; i < getWebElementsList(oneTv).size(); i ++){
-            if(getWebElementsList(oneTv).get(i).getText().equals(etalonString))
+            if(getWebElementsList(oneTv).get(i).getAttribute("data-id").equals(dataID))
                 flag = true;
         }
         Assert.assertTrue(flag);
+    }
+
+    public void checkRatingSort(){
+        changeSorting(ratingSorting);
+        String tempString;
+        List<Double> rating = new ArrayList<>();
+        for(int i = 0; i < getWebElementsList(ratingString).size(); i ++)
+        {
+            tempString = getWebElementsList(ratingString).get(i).getText();
+            if(tempString.equals(""))
+                break;
+            tempString = tempString.substring(0, tempString.indexOf('\n'));
+            rating.add(Double.parseDouble(tempString));
+        }
+
+        for(int i = 0; i < rating.size() - 1; i ++)
+        {
+            Assert.assertTrue(rating.get(i) >= rating.get(i + 1));
+        }
+
     }
 
 }
